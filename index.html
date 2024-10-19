@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="container" id="printArea">
+            <div class="logo">
+                <img src="https://i.postimg.cc/KYD7YvRf/Logo-Glovo-PNG.png" alt="Glovo">
+            </div>
+            <div class="degraded-background">
+                <div class="number" id="ticketNumber">000</div>
+                <div class="info" id="ticketInfo">X1</div>
+            </div>
+            <div class="footer">¡Gracias por su compra!</div>
+        </div>
+
+        <div class="button-container">
+            <button class="button button-7" data-number="7">7</button>
+            <button class="button button-8" data-number="8">8</button>
+            <button class="button button-9" data-number="9">9</button>
+            <button class="button button-4" data-number="4">4</button>
+            <button class="button button-5" data-number="5">5</button>
+            <button class="button button-6" data-number="6">6</button>
+            <button class="button button-1" data-number="1">1</button>
+            <button class="button button-2" data-number="2">2</button>
+            <button class="button button-3" data-number="3">3</button>
+            <button class="button button-ac" onclick="clearDisplay()">AC</button>
+            <button class="button button-0" data-number="0">0</button>
+            <button class="button button-X" onclick="setX()" title="Establecer X">X</button>
+            <button class="special-button" onclick="printTicket()">Imprimir</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
