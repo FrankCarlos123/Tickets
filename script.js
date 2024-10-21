@@ -37,3 +37,23 @@ function printTicket() {
     }
     clearDisplay();
 }
+
+// Eventos del teclado
+document.addEventListener('keydown', function(event) {
+    const keyMap = {
+        '1': 1, '2': 2, '3': 3,
+        '4': 4, '5': 5, '6': 6,
+        '7': 7, '8': 8, '9': 9,
+        '0': 0
+    };
+
+    if (event.key in keyMap) {
+        addNumber(keyMap[event.key]);
+    } else if (event.key === '*' || event.key === 'x' || event.key === 'X') {
+        setX();
+    } else if (event.key === '-') {
+        clearDisplay();
+    } else if (event.key === 'Enter') {
+        printTicket();
+    }
+});
