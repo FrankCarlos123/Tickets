@@ -38,7 +38,17 @@ function printTicket() {
     clearDisplay();
 }
 
-// Eventos del teclado
+// Función para simular el efecto visual de presionar un botón
+function simulateButtonPress(button) {
+    if (button) {
+        button.style.backgroundColor = '#FF0000';
+        setTimeout(() => {
+            button.style.backgroundColor = '';
+        }, 100);
+    }
+}
+
+// Eventos del teclado con efectos visuales
 document.addEventListener('keydown', function(event) {
     const keyMap = {
         '1': 1, '2': 2, '3': 3,
@@ -47,13 +57,21 @@ document.addEventListener('keydown', function(event) {
         '0': 0
     };
 
+    let buttonToPress;
+
     if (event.key in keyMap) {
+        buttonToPress = document.querySelector(`.button-${event.key}`);
         addNumber(keyMap[event.key]);
     } else if (event.key === '*' || event.key === 'x' || event.key === 'X') {
+        buttonToPress = document.querySelector('.button-X');
         setX();
     } else if (event.key === '-') {
+        buttonToPress = document.querySelector('.button-ac');
         clearDisplay();
     } else if (event.key === 'Enter') {
+        buttonToPress = document.querySelector('.special-button');
         printTicket();
     }
+
+    simulateButtonPress(buttonToPress);
 });
